@@ -7,8 +7,8 @@ const generateRandomColor = () => {
   return color;
 };
 export const generateRandomParticleAniOptions = (delay?: number) => {
-  const opacity = 0.2 + Math.random();
-  const scale = Math.floor(Math.random() * 3) + 1;
+  const opacity = 0.4 + Math.random();
+  const scale = Math.random() + 0.7;
   const background = generateRandomColor();
   const x = Math.random() * (window.innerWidth * 0.95);
   const keyframes = [
@@ -19,7 +19,7 @@ export const generateRandomParticleAniOptions = (delay?: number) => {
       background,
       opacity: 0,
     },
-    { offset: 0.2, background, opacity },
+    { offset: 0.2, background, opacity: opacity / 2 },
     {
       offset: 1,
       transform: `translate(${x}px,-50px)

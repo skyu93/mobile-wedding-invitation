@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import dayjs from 'dayjs';
-import duration from 'dayjs/plugin/duration';
 import { onBeforeUnmount, onMounted, reactive } from 'vue';
-import 'dayjs/locale/ko'; // 한국어 locale 로드
 
-dayjs.locale('ko'); // locale을 한국어로 설정
-dayjs.extend(duration);
+const props = defineProps({
+  date: { type: String, required: true },
+});
 
-const props = defineProps({ date: String });
 const targetDate = dayjs(props.date);
 const time = `${targetDate.format('dddd')} ${targetDate.format('A hh시 mm분')}`;
 const remainingTime = reactive({
@@ -48,24 +46,24 @@ onBeforeUnmount(() => {
     <div class="calendar">
       <img src="/src/assets/calender.svg" alt="달력" style="width: 100%; height: auto" />
     </div>
-    <div class="countdown">
-      <div class="time-unit">
-        <span class="number">{{ remainingTime.days }}</span
-        ><span class="label">DAYS</span>
-      </div>
-      <div class="time-unit">
-        <span class="number">{{ remainingTime.hours }}</span
-        ><span class="label">HOUR</span>
-      </div>
-      <div class="time-unit">
-        <span class="number">{{ remainingTime.minutes }}</span
-        ><span the class="label">MIN</span>
-      </div>
-      <div class="time-unit">
-        <span class="number">{{ remainingTime.seconds }}</span
-        ><span class="label">SEC</span>
-      </div>
-    </div>
+    <!--    <div class="countdown">-->
+    <!--      <div class="time-unit">-->
+    <!--        <span class="number">{{ remainingTime.days }}</span-->
+    <!--        ><span class="label">DAYS</span>-->
+    <!--      </div>-->
+    <!--      <div class="time-unit">-->
+    <!--        <span class="number">{{ remainingTime.hours }}</span-->
+    <!--        ><span class="label">HOUR</span>-->
+    <!--      </div>-->
+    <!--      <div class="time-unit">-->
+    <!--        <span class="number">{{ remainingTime.minutes }}</span-->
+    <!--        ><span class="label">MIN</span>-->
+    <!--      </div>-->
+    <!--      <div class="time-unit">-->
+    <!--        <span class="number">{{ remainingTime.seconds }}</span-->
+    <!--        ><span class="label">SEC</span>-->
+    <!--      </div>-->
+    <!--    </div>-->
     <div class="message">
       민선 <span style="color: #ea7664">♥</span> 민선의 결혼식이
       <span class="highlight">{{ `${remainingTime.days}일` }}</span> 남았습니다.
