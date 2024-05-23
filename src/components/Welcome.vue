@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CountDown from './CountDown.vue';
+import CountDown from './count-down.vue';
 import { Wedding } from '../types.ts';
 import { onMounted } from 'vue';
 

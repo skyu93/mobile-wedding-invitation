@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import { Wedding } from './types.ts';
-import Particles from './components/particle/Particles.vue';
 import Logo from './components/Logo.vue';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import 'dayjs/locale/ko';
+import Particle from './components/particle/particle.vue';
 
 dayjs.locale('ko'); // locale을 한국어로 설정
 dayjs.extend(duration);
@@ -61,7 +61,7 @@ onMounted(() => {
 
 <template>
   <div class="warp">
-    <Particles :num-of-particle="100" />
+    <particle :num-of-particle="100" />
     <header><Logo /></header>
     <main>
       <section ref="welcome" class="welcome">
