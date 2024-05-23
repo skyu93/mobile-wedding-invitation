@@ -3,8 +3,8 @@ import { onMounted } from 'vue';
 
 onMounted(() => {
   const audio = document.getElementById('bose') as HTMLAudioElement;
-  const img = document.getElementById('boseImg');
-  let analyser;
+  const img = document.getElementById('boseImg') as HTMLImageElement;
+  let analyser: AnalyserNode | null = null;
   function initializeAudioContext() {
     const context = new AudioContext();
     const src = context.createMediaElementSource(audio);
