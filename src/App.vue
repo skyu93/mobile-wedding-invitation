@@ -3,12 +3,10 @@ import { onMounted, ref } from 'vue';
 import { Wedding } from './types.ts';
 import Particles from './components/particle/Particles.vue';
 import Logo from './components/Logo.vue';
-import WeddingCard from './components/WeddingCard.vue';
-import DateOfWedding from './components/DateOfWedding.vue';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import 'dayjs/locale/ko';
-import Welcome from './components/Welcome.vue'; // 한국어 locale 로드
+
 dayjs.locale('ko'); // locale을 한국어로 설정
 dayjs.extend(duration);
 
