@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import CountDown from './count-down.vue';
-import { Wedding } from '../types.ts';
 import { onMounted } from 'vue';
+import { WeddingInfo } from '../types.ts';
 
 interface Props {
-  wedding: Wedding;
+  modelValue: WeddingInfo;
 }
 const props = defineProps<Props>();
 
@@ -14,7 +14,7 @@ onMounted(() => {});
 <template>
   <div class="warp">
     <div>SAVE THE DATE</div>
-    <CountDown :date="props.wedding.date" />
+    <CountDown :date="props.modelValue.date" />
   </div>
 </template>
 

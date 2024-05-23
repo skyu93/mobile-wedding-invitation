@@ -1,23 +1,26 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { Wedding } from './types.ts';
+import { WeddingInfo } from './types.ts';
 import Logo from './components/Logo.vue';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import 'dayjs/locale/ko';
 import Particle from './components/particle/particle.vue';
+import MainCard from './components/main-card.vue';
+import Welcome from './components/welcome.vue';
+import DateOfWedding from './components/date-of-wedding.vue';
 
 dayjs.locale('ko'); // locale을 한국어로 설정
 dayjs.extend(duration);
 
-const wedding: Wedding = {
+const weddingInfo: WeddingInfo = {
   date: '2024-08-10 12:00',
   groomName: '김민선',
   brideName: '김민선',
 };
-const welcome = ref<HTMLElement>();
-const weddingCard = ref<HTMLElement>();
-const dateOfWedding = ref<HTMLElement>();
+const welcomeEl = ref<HTMLElement>();
+const mainCardEl = ref<HTMLElement>();
+const dateOfWeddingEl = ref<HTMLElement>();
 const io = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
   entries.forEach((entry) => {
     // 타겟 엘리먼트와 교차되었는지 || 현재 이전 데이터 로딩중 확인
@@ -35,9 +38,9 @@ const io = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
 //
 
 onMounted(() => {
-  io.observe(weddingCard.value as HTMLElement);
-  io.observe(dateOfWedding.value as HTMLElement);
-  welcome.value?.animate(
+  io.observe(mainCardEl.value as HTMLElement);
+  io.observe(dateOfWeddingEl.value as HTMLElement);
+  welcomeEl.value?.animate(
     [
       {
         transform: `translateY(80px)`,
@@ -64,14 +67,14 @@ onMounted(() => {
     <particle :num-of-particle="100" />
     <header><Logo /></header>
     <main>
-      <section ref="welcome" class="welcome">
-        <Welcome :wedding="wedding" />
+      <section ref="welcomeEl" class="warp-welcome">
+        <welcome :model-value="weddingInfo" />
       </section>
-      <section ref="weddingCard" class="weddingCard">
-        <WeddingCard :wedding="wedding" />
+      <section ref="mainCardEl" class="warp-main-card">
+        <main-card :model-value="weddingInfo" />
       </section>
-      <section ref="dateOfWedding" class="dateOfWedding">
-        <DateOfWedding :date="wedding.date" />
+      <section ref="dateOfWeddingEl" class="warp-date-of-wedding">
+        <date-of-wedding :date="weddingInfo.date" />
       </section>
     </main>
     <footer></footer>
@@ -93,7 +96,7 @@ header {
 main {
   height: 3000px;
 }
-.welcome {
+.warp-welcome {
   position: relative;
   display: flex;
   justify-content: center;
@@ -101,10 +104,10 @@ main {
   width: 100%;
   height: 80vh;
 }
-.weddingCard {
+.warp-main-card {
   height: 600px;
 }
-.dateOfWedding {
+.warp-date-of-wedding {
   height: 600px;
 }
 @media screen and (min-width: 674px) {

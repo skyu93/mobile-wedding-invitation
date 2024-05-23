@@ -2,7 +2,9 @@
 import { onMounted } from 'vue';
 import { generateRandomParticleAniOptions } from './index.ts';
 
-const props = defineProps({ numOfParticle: Number });
+const props = defineProps({
+  numOfParticle: { type: Number, required: true },
+});
 const particles = Array.from({ length: props.numOfParticle ?? 0 });
 
 onMounted(() => {
@@ -26,7 +28,7 @@ onMounted(() => {
   background-color: transparent;
   margin: 0 auto;
   width: 95vw;
-  height: 100vh;
+  height: 120vh;
 }
 .particle-item {
   position: absolute;

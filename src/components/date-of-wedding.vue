@@ -46,24 +46,6 @@ onBeforeUnmount(() => {
     <div class="calendar">
       <img src="/src/assets/calender.svg" alt="달력" style="width: 100%; height: auto" />
     </div>
-    <!--    <div class="countdown">-->
-    <!--      <div class="time-unit">-->
-    <!--        <span class="number">{{ remainingTime.days }}</span-->
-    <!--        ><span class="label">DAYS</span>-->
-    <!--      </div>-->
-    <!--      <div class="time-unit">-->
-    <!--        <span class="number">{{ remainingTime.hours }}</span-->
-    <!--        ><span class="label">HOUR</span>-->
-    <!--      </div>-->
-    <!--      <div class="time-unit">-->
-    <!--        <span class="number">{{ remainingTime.minutes }}</span-->
-    <!--        ><span class="label">MIN</span>-->
-    <!--      </div>-->
-    <!--      <div class="time-unit">-->
-    <!--        <span class="number">{{ remainingTime.seconds }}</span-->
-    <!--        ><span class="label">SEC</span>-->
-    <!--      </div>-->
-    <!--    </div>-->
     <div class="message">
       민선 <span style="color: #ea7664">♥</span> 민선의 결혼식이
       <span class="highlight">{{ `${remainingTime.days}일` }}</span> 남았습니다.
@@ -93,35 +75,6 @@ onBeforeUnmount(() => {
   font-size: 1.5rem;
   color: #333;
 }
-
-.countdown {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 10px;
-  color: black;
-  width: 100%;
-}
-
-.time-unit {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  background-color: #f2eeee;
-  padding: 6px;
-  border-radius: 10px;
-}
-.time-unit .number {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.time-unit .label {
-  font-size: 1rem;
-  color: #666;
-}
-
 .message {
   font-size: 14px;
   color: #666;

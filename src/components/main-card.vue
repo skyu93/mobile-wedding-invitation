@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { Wedding } from '../types.ts';
 import { onMounted } from 'vue';
 import dayjs from 'dayjs';
+import { WeddingInfo } from '../types.ts';
 
 interface Props {
-  wedding: Wedding;
+  modelValue: WeddingInfo;
 }
 const props = defineProps<Props>();
-const weddingDate = dayjs(props.wedding.date).format('YYYY.MM.DD dddd');
+const weddingDate = dayjs(props.modelValue.date).format('YYYY.MM.DD dddd');
 
 onMounted(() => {});
 </script>
