@@ -9,6 +9,7 @@ import Particle from './components/particle/particle.vue';
 import MainCard from './components/main-card.vue';
 import Welcome from './components/welcome.vue';
 import DateOfWedding from './components/date-of-wedding.vue';
+import Location from './components/location.vue';
 
 dayjs.locale('ko'); // locale을 한국어로 설정
 dayjs.extend(duration);
@@ -75,6 +76,9 @@ onMounted(() => {
       </section>
       <section ref="dateOfWeddingEl" class="warp-date-of-wedding">
         <date-of-wedding :date="weddingInfo.date" />
+      </section>
+      <section>
+        <Location />
       </section>
     </main>
     <footer></footer>
