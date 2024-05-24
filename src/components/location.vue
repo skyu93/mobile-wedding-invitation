@@ -7,6 +7,7 @@ onMounted(() => {
     return;
   }
 
+  /* eslint-disable no-undef */
   const mapOptions = {
     center: new naver.maps.LatLng(37.5218332, 126.9270875),
     zoom: 17,
@@ -17,6 +18,7 @@ onMounted(() => {
     position: new naver.maps.LatLng(37.5218332, 126.9270875),
     map: map,
   });
+  /* eslint-enable no-undef */
 });
 </script>
 

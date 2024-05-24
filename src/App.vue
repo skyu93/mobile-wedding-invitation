@@ -6,10 +6,10 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import 'dayjs/locale/ko';
 import Particle from './components/particle/particle.vue';
-import MainCard from './components/main-card.vue';
-import Welcome from './components/welcome.vue';
-import DateOfWedding from './components/date-of-wedding.vue';
-import Location from './components/location.vue';
+import MainCard from './components/MainCard.vue';
+import Welcome from './components/Welcome.vue';
+import DateOfWedding from './components/DateOfWedding.vue';
+import Location from './components/Location.vue';
 
 dayjs.locale('ko'); // locale을 한국어로 설정
 dayjs.extend(duration);
@@ -69,13 +69,13 @@ onMounted(() => {
     <header><Logo /></header>
     <main>
       <section ref="welcomeEl" class="warp-welcome">
-        <welcome :model-value="weddingInfo" />
+        <Welcome :model-value="weddingInfo" />
       </section>
       <section ref="mainCardEl" class="warp-main-card">
-        <main-card :model-value="weddingInfo" />
+        <MainCard :model-value="weddingInfo" />
       </section>
       <section ref="dateOfWeddingEl" class="warp-date-of-wedding">
-        <date-of-wedding :date="weddingInfo.date" />
+        <DateOfWedding :date="weddingInfo.date" />
       </section>
       <section>
         <Location />
