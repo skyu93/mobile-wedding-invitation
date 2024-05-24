@@ -3,16 +3,16 @@ import { onMounted } from 'vue';
 
 onMounted(() => {
   /* eslint-disable no-undef */
-  const mapOptions = {
-    center: new naver.maps.LatLng(37.5218332, 126.9270875),
-    zoom: 17,
-  };
-  const map = new naver.maps.Map('map', mapOptions);
-
-  new naver.maps.Marker({
-    position: new naver.maps.LatLng(37.5218332, 126.9270875),
-    map: map,
-  });
+  // const mapOptions = {
+  //   center: new naver.maps.LatLng(37.5218332, 126.9270875),
+  //   zoom: 17,
+  // };
+  // const map = new naver.maps.Map('map', mapOptions);
+  //
+  // new naver.maps.Marker({
+  //   position: new naver.maps.LatLng(37.5218332, 126.9270875),
+  //   map: map,
+  // });
   /* eslint-enable no-undef */
 });
 </script>
