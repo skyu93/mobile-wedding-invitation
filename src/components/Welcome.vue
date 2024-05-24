@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import CountDown from './CountDown.vue';
 import { onMounted } from 'vue';
-import { WeddingInfo } from '../types.ts';
+import { WeddingInfo } from '../types';
 
 interface Props {
   modelValue: WeddingInfo;

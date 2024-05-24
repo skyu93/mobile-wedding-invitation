@@ -1,3 +1,4 @@
+
 export interface WeddingInfo {
   date: string;
   groomName: string;
