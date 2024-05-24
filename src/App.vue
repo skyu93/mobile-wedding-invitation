@@ -9,7 +9,7 @@ import Particle from './components/particle/particle.vue';
 import MainCard from './components/MainCard.vue';
 import Welcome from './components/Welcome.vue';
 import DateOfWedding from './components/DateOfWedding.vue';
-import Location from './components/Location.vue';
+import Location2 from './components/Location2.vue';
 
 dayjs.locale('ko'); // locale을 한국어로 설정
 dayjs.extend(duration);
@@ -78,7 +78,7 @@ onMounted(() => {
         <DateOfWedding :date="weddingInfo.date" />
       </section>
       <section>
-        <Location />
+        <Location2 />
       </section>
     </main>
     <footer></footer>
