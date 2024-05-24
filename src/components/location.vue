@@ -2,11 +2,6 @@
 import { onMounted } from 'vue';
 
 onMounted(() => {
-  if (!window.naver || !window.naver.maps) {
-    console.error('Naver Maps API is not loaded');
-    return;
-  }
-
   /* eslint-disable no-undef */
   const mapOptions = {
     center: new naver.maps.LatLng(37.5218332, 126.9270875),

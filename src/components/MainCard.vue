@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import dayjs from 'dayjs';
-import { WeddingInfo } from '../types/wedding.ts';
+import { WeddingInfo } from '../types';
 
 interface Props {
   modelValue: WeddingInfo;

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { WeddingInfo } from './types/wedding.ts';
+import { WeddingInfo } from './types';
 import Logo from './components/Logo.vue';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
