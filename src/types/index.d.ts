@@ -1,6 +1,7 @@
-
 export interface WeddingInfo {
   date: string;
-  groomName: string;
-  brideName: string;
+  groom: string;
+  bride: string;
+  address: string;
+  place: string;
 }

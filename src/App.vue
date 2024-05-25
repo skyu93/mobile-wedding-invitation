@@ -9,15 +9,16 @@ import Particle from './components/particle/particle.vue';
 import MainCard from './components/MainCard.vue';
 import Welcome from './components/Welcome.vue';
 import DateOfWedding from './components/DateOfWedding.vue';
-import Location from './components/Location.vue';
 
 dayjs.locale('ko'); // locale을 한국어로 설정
 dayjs.extend(duration);
 
 const weddingInfo: WeddingInfo = {
   date: '2024-08-10 12:00',
-  groomName: '김민선',
-  brideName: '김민선',
+  groom: '김민선',
+  bride: '김민선',
+  address: '서울 영등포구 여의도동 35',
+  place: '5층 웨딩여율리 OOO홀',
 };
 const welcomeEl = ref<HTMLElement>();
 const mainCardEl = ref<HTMLElement>();
@@ -68,18 +69,21 @@ onMounted(() => {
     <particle :num-of-particle="100" />
     <header><Logo /></header>
     <main>
-      <section ref="welcomeEl" class="warp-welcome">
+      <section ref="welcomeEl" class="welcome">
         <Welcome :model-value="weddingInfo" />
       </section>
-      <section ref="mainCardEl" class="warp-main-card">
+      <section ref="mainCardEl" class="main-card">
         <MainCard :model-value="weddingInfo" />
       </section>
-      <section ref="dateOfWeddingEl" class="warp-date-of-wedding">
+      <section ref="dateOfWeddingEl" class="date-of-wedding">
         <DateOfWedding :date="weddingInfo.date" />
       </section>
-      <section>
-        <Location />
-      </section>
+      <!--      <section>-->
+      <!--        <Location />-->
+      <!--      </section>-->
+      <!--      <section>-->
+      <!--        <Account />-->
+      <!--      </section>-->
     </main>
     <footer></footer>
   </div>
@@ -100,18 +104,24 @@ header {
 main {
   height: 3000px;
 }
-.warp-welcome {
+
+.welcome {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
 }
-.warp-main-card {
+.main-card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 600px;
 }
-.warp-date-of-wedding {
+.date-of-wedding {
   height: 600px;
 }
 @media screen and (min-width: 674px) {
