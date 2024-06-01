@@ -38,8 +38,8 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="container">
-    <div class="date-header">
+  <div class="date-of-wedding-warp">
+    <div class="date-of-wedding-header">
       <div class="date">{{ targetDate.format('YYYY.MM.DD') }}</div>
       <div class="time">{{ time }}</div>
     </div>
@@ -54,25 +54,30 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.container {
+.date-of-wedding-warp {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 370px;
-  margin: auto;
-  background: #f6f5f5;
+  margin: 0 auto;
+  padding: 30px 0;
+  background-color: #f6f5f5;
 }
-.date-header {
+.date-of-wedding-header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 15px 0;
 }
-.date,
+.date {
+  font-size: 1.4rem;
+  color: #333;
+}
 .time {
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   color: #333;
 }
 .message {
@@ -80,7 +85,6 @@ onBeforeUnmount(() => {
   color: #666;
   margin: 10px 0;
 }
-
 .highlight {
   color: #ea7664;
   font-weight: bold;

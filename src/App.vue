@@ -119,10 +119,10 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 600px;
+  height: 700px;
 }
 .date-of-wedding {
-  height: 600px;
+  height: 400px;
 }
 @media screen and (min-width: 674px) {
   .warp {
