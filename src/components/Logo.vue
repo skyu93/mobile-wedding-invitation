@@ -35,16 +35,28 @@ onMounted(() => {
       img.style.transform = `scale(${beat})`;
     }
   }
-
-  window.addEventListener('click', () => {
+  audio.onended = () => {
     if (!analyser) initializeAudioContext();
+    if (!audio) return;
     audio.play();
     animate();
-  });
+  };
+  toggleMusicPlay = () => {
+    if (!analyser) initializeAudioContext();
+    if (!audio) return;
+    if (audio.paused) {
+      console.log('teo togglePlay start');
+      audio.play();
+      animate();
+    } else {
+      audio.pause();
+    }
+  };
 });
+let toggleMusicPlay = null as (() => void) | null;
 </script>
 <template>
-  <div>
+  <div @click="toggleMusicPlay">
     <img id="boseImg" src="../assets/bose_logo.svg" alt="Bose Logo" />
     <audio id="bose">
       <source src="../assets/piano.mp3" type="audio/mpeg" />

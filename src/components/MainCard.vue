@@ -21,7 +21,7 @@ onMounted(() => {});
       <div>{{ dayoftheWeek }}</div>
     </div>
     <div class="main-card-image">
-      <img src="../assets/img.jpg" alt="Background Image" />
+      <img src="../assets/main_img.webp" alt="Background Image" />
       <video autoplay loop playsinline muted>
         <source src="../assets/flower.mp4" type="video/mp4" />
       </video>
@@ -42,7 +42,7 @@ onMounted(() => {});
 .main-card-image {
   position: relative;
   width: 300px;
-  height: 400px;
+  height: 490px;
   overflow: hidden;
 }
 

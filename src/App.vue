@@ -38,8 +38,6 @@ const io = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
   });
 });
 
-//
-
 onMounted(() => {
   io.observe(mainCardEl.value as HTMLElement);
   io.observe(dateOfWeddingEl.value as HTMLElement);
@@ -66,9 +64,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="warp">
+  <div class="main-wrapper">
     <particle :num-of-particle="100" />
-    <header><Logo /></header>
     <main>
       <section ref="welcomeEl" class="welcome">
         <Welcome :model-value="weddingInfo" />
@@ -95,26 +92,11 @@ onMounted(() => {
         />
       </section>
     </main>
-    <footer></footer>
   </div>
+  <Logo style="position: fixed; bottom: 20px; right: 20px" />
 </template>
 
 <style scoped>
-.warp {
-  contain: paint;
-}
-
-header {
-  position: static;
-  top: 0;
-  height: 50px;
-  display: flex;
-  z-index: 999;
-}
-main {
-  height: 3000px;
-}
-
 .welcome {
   position: relative;
   display: flex;
@@ -135,7 +117,7 @@ main {
   height: 400px;
 }
 @media screen and (min-width: 674px) {
-  .warp {
+  .main-wrapper {
     width: 674px;
     margin: 0 auto;
   }
