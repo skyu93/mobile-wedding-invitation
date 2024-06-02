@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import dayjs from 'dayjs';
 import { onBeforeUnmount, onMounted, reactive } from 'vue';
+import { WeddingInfo } from '../types';
 
-const props = defineProps({
-  date: { type: String, required: true },
-});
-
-const targetDate = dayjs(props.date);
+interface Props {
+  modelValue: WeddingInfo;
+}
+const props = defineProps<Props>();
+const targetDate = dayjs(props.modelValue.date);
 const time = `${targetDate.format('dddd')} ${targetDate.format('A hh시 mm분')}`;
 const remainingTime = reactive({
   days: 0,
@@ -47,8 +48,8 @@ onBeforeUnmount(() => {
       <img src="/src/assets/calender.svg" alt="달력" style="width: 100%; height: auto" />
     </div>
     <div class="message">
-      민선 <span style="color: #ea7664">♥</span> 민선의 결혼식이
-      <span class="highlight">{{ `${remainingTime.days}일` }}</span> 남았습니다.
+      {{ modelValue.groom.substring(1) }} <span style="color: #ea7664">♥</span> {{ modelValue.bride.substring(1) }}의
+      결혼식이 <span class="highlight">{{ `${remainingTime.days}일` }}</span> 남았습니다.
     </div>
   </div>
 </template>

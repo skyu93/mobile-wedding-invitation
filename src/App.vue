@@ -15,8 +15,8 @@ dayjs.locale('ko'); // locale을 한국어로 설정
 dayjs.extend(duration);
 
 const weddingInfo: WeddingInfo = {
-  date: '2024-08-10 12:00',
-  groom: '김민선',
+  date: '2024-08-10 14:30',
+  groom: '김형엽',
   bride: '김민선',
   address: '서울 영등포구 여의도동 35',
   place: '5층 웨딩여율리 OOO홀',
@@ -24,6 +24,8 @@ const weddingInfo: WeddingInfo = {
 const welcomeEl = ref<HTMLElement>();
 const mainCardEl = ref<HTMLElement>();
 const dateOfWeddingEl = ref<HTMLElement>();
+const accountEl = ref<HTMLElement>();
+
 const io = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
   entries.forEach((entry) => {
     // 타겟 엘리먼트와 교차되었는지 || 현재 이전 데이터 로딩중 확인
@@ -33,7 +35,7 @@ const io = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
       iterations: 1,
       fill: 'both',
       easing: 'linear',
-      delay: 500,
+      delay: 800,
     });
   });
 });
@@ -41,6 +43,7 @@ const io = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
 onMounted(() => {
   io.observe(mainCardEl.value as HTMLElement);
   io.observe(dateOfWeddingEl.value as HTMLElement);
+  io.observe(accountEl.value as HTMLElement);
   welcomeEl.value?.animate(
     [
       {
@@ -74,12 +77,12 @@ onMounted(() => {
         <MainCard :model-value="weddingInfo" />
       </section>
       <section ref="dateOfWeddingEl" class="date-of-wedding">
-        <DateOfWedding :date="weddingInfo.date" />
+        <DateOfWedding :model-value="weddingInfo" />
       </section>
       <!--      <section>-->
       <!--        <Location />-->
       <!--      </section>-->
-      <section>
+      <section ref="accountEl" class="account">
         <Account
           :groom="[
             { name: '김민선', bankName: '신한', accountNumber: '110-0000' },
