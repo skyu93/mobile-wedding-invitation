@@ -7,11 +7,42 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --font-regular: IropkeBatangM;
+  --font-regular-spacing: 0;
+  --font-gothic: Pretendard-Regular;
+  --font-gothic-spacing: -0.2px;
+  --font-bold: IropkeBatangM;
+  --font-bold-weight: bold;
+
+  --text-color: #544f4f;
+  --text-dark-color: #524548;
+  --text-light-color: #89757a;
+  --title-text-color: #89757a;
+}
+@font-face {
+  font-family: 'IropkeBatangM';
+  src: url('https://cdn.jsdelivr.net/gh/fontbee/font@main/Iropke/IropkeBatangM.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
 }
 @font-face {
   font-family: 'Diphylleia-Regular';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_JAMO@1.0/Diphylleia-Regular.woff2') format('woff2');
   font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
 }
 /*@font-face {*/
@@ -23,4 +54,12 @@
 body {
   padding: 0;
   margin: 0;
+}
+
+.section-title {
+  font-family: var(--font-regular);
+  color: var(--title-text-color);
+  letter-spacing: 0.5px;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }

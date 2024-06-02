@@ -27,7 +27,11 @@ onMounted(() => {});
       </video>
     </div>
     <div class="main-card-footer">
-      <div>{{ modelValue.groom }} | {{ modelValue.bride }}</div>
+      <div>
+        {{ modelValue.groom }}
+        <div class="divider"></div>
+        {{ modelValue.bride }}
+      </div>
       <div>{{ weddingDate }}</div>
       <div>{{ modelValue.place }}</div>
     </div>
@@ -88,6 +92,8 @@ onMounted(() => {});
   align-items: center;
   color: black;
   flex-direction: column;
+  line-height: 1.8rem;
+  font-family: var(--font-regular), serif;
 }
 .main-card-footer > div:nth-child(1) {
   font-size: 1.3rem;
@@ -98,5 +104,16 @@ onMounted(() => {});
 }
 .main-card-footer > div:nth-child(3) {
   color: rgb(84, 79, 79);
+}
+.divider {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  content: '';
+  width: 1px;
+  height: 1.1rem;
+  background: #000;
+  opacity: 0.85;
+  margin: 0 10px;
 }
 </style>

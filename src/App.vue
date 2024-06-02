@@ -9,6 +9,7 @@ import Particle from './components/particle/particle.vue';
 import MainCard from './components/MainCard.vue';
 import Welcome from './components/Welcome.vue';
 import DateOfWedding from './components/DateOfWedding.vue';
+import Account from './components/Account.vue';
 
 dayjs.locale('ko'); // locale을 한국어로 설정
 dayjs.extend(duration);
@@ -81,9 +82,18 @@ onMounted(() => {
       <!--      <section>-->
       <!--        <Location />-->
       <!--      </section>-->
-      <!--      <section>-->
-      <!--        <Account />-->
-      <!--      </section>-->
+      <section>
+        <Account
+          :groom="[
+            { name: '김민선', bankName: '신한', accountNumber: '110-0000' },
+            { name: '김민선', bankName: '신한', accountNumber: '110-0000' },
+          ]"
+          :bride="[
+            { name: '김민선', bankName: '신한', accountNumber: '110-0000' },
+            { name: '김민선', bankName: '신한', accountNumber: '110-0000' },
+          ]"
+        />
+      </section>
     </main>
     <footer></footer>
   </div>
